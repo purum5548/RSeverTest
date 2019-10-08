@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include ../views/header.ejs %>
+    <div id = "BoardWrapper">
+      <div id = "DocWrapper">
+        <h1><%= Docs.title%></h1>
+        <p><%= Docs.postdate%></p>
+        <p><%= Docs.nickname%></p>
+        <p><%= Docs.data%></p>
+      </div>
+    </div>
+  </body>
+</html>

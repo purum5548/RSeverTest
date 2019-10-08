@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %>에디트 모드</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %> 에디트 모드</h1>
+    <p>추가하기</p>
+    <form action="Edit/Addmenu" method="GET">
+      이름 : <br><input type="text" name="linkText" placeholder="이름"><br>
+      드롭다운 여부 : <br><input type="checkbox" name="dropDown" disabled="disabled"><br>
+      링크(수정불가) : <br><input type="text" name="linkAddress" value="/" readonly><br>
+      <br><input type="submit" value="추가">
+    </form>
+    <p>제거하기</p>
+    <form action="Edit/Removemenu" method="GET">
+      <input type="number" name="value">
+      <input type="submit" value="삭제">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/joinpagefuncs.js"></script>
+  </head>
+  <body>
+    <% include ../views/header.ejs %>
+    <div id = "FormWrapper">
+      <form action="Join/Submit" method="POST">
+        ID : <input type="text" id = "id" name="id" placeholder="아이디(8자이상, 영문, 숫자 가능, 특수문자 불가)"><input type="button" name="check" value="중복확인" onclick="idCheck()"/><br>
+        <% if(id != 'null'){ %>
+        <p><%-id%></p>
+        <%}%>
+        NICKName : <input type="text" id = "nick" name="nickName" placeholder="별명(4자 이상, 특수문자 불가)"><input type="button" name="check" value="중복확인" onclick="nicknameCheck()"/><br>
+        <% if(nick != 'null'){ %>
+        <p><%-nick%></p>
+        <%}%>
+        PASSWORD : <input type="password" name="password" placeholder="비밀번호(8자 이상, 영문, 숫자 모두 포함, 특수문자 불가)"><br>
+        <% if(pass != 'null'){ %>
+        <p><%-pass%></p>
+        <%}%>
+        PASSWORD 확인 : <input type="password" name="passwordCheck" placeholder="비밀번호 확인"><br>
+        <input type="submit">
+      </form>
+    </div>
+  </body>
+</html>

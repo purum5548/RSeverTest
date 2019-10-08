@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/joinpagefuncs.js"></script>
+  </head>
+  <body>
+    <% include ../views/header.ejs %>
+    <div id = "FormWrapper">
+      <form action="Login/Submit" method="POST">
+        <% if(res != 'null'){ %>
+        <p><%-res%></p>
+        <%}%>
+        ID : <input type="text" id = "id" name="id" placeholder="아이디"><br>
+        PASSWORD : <input type="password" name="password" placeholder="비밀번호"><br>
+        <input type="submit">
+      </form>
+    </div>
+  </body>
+</html>

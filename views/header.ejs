@@ -1,0 +1,27 @@
+<div id = "headerWrapper">
+  <div id = "TopWrapper">
+    <div id = "UserOptions">
+      <% if(Login == 'login') {%>
+        <p><%-user%></p>
+        <a href = "Login/Logout">로그아웃</a>
+      <%} else{%>
+        <a href = "/Login">로그인</a>
+        <a href = "/Join">회원가입</a>
+      <%}%>
+    </div>
+  </div>
+  <div id = "NavWrapper">
+    <div id = "Logo">
+      <a href = "/">호로록! 닷컴^^</a>
+    </div>
+    <nav>
+      <div id = "listWrapper">
+        <ul>
+          <li><a href = "/Board">게시판</a></li>
+          <li>소개</li>
+          <li>유튜브 보기</li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

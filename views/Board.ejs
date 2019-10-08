@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/joinpagefuncs.js"></script>
+  </head>
+  <body>
+    <% include ../views/header.ejs %>
+    <div id = "BoardWrapper">
+      <div id = "DocTitle">
+        <h1>호로록 게시판! 게시글을 올리자</h1>
+      </div>
+      <div id = "DocWrapper">
+        <ul>
+          <% for(var i = Docs.length - 1; i >= 0; i --){ %>
+            <li><span><%=( min + i )%>&nbsp</span><a href = <%='/Board/post?num=' + ( min + i)%>><%= Docs[i].title %></a><span class = "name">&nbsp&nbsp<%=Docs[i].nickname%></span></li>
+          <%}%>
+        </ul>
+      </div>
+      <div id = "ControlsWrapper">
+        <% if(Login == 'login') {%>
+          <a href = "/Board/GetPost">글 쓰기</a>
+        <%}%>
+        <a href = <%=prev%>>&lt;</a>
+        <span><%=count%></span>
+        <a href = <%=next%>>&gt;</a>
+      </div>
+    </div>
+  </body>
+</html>
